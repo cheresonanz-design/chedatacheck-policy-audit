@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CheDataCheck PolicyAudit — Gewerbeversicherungs-Deckungsabgleich &amp; Schaden-Triage</title>
+  <meta name="description" content="Prüft Cyber-, Betriebs- &amp; Inhalts-Policen auf Unterversicherung (§ 75 VVG), Sublimits &amp; Obliegenheitsfallen lokal im Browser." />
+  <link rel="canonical" href="https://cheresonanz-design.github.io/chedatacheck-policy-audit/" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "CheDataCheck Policy", "applicationCategory": "BusinessApplication", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "url": "https://cheresonanz-design.github.io/chedatacheck-policy-audit/"}</script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand-mark" href="index.html"><span>CheDataCheck Policy</span><span class="brand-badge">VVG · CYBER · BHV-AUDIT</span></a>
+      <nav class="nav-links" aria-label="Hauptnavigation"><a href="index.html" class="active">Policen-Auditor</a>
+<a href="deckungs-gap-check/" class="">Deckungs-Gaps</a>
+<a href="unterversicherung-check/" class="">§ 75 VVG Check</a>
+<a href="schaden-triage/" class="">Schaden-Triage</a>
+<a href="pro/" class="">Kit &amp; Rollout</a>
+<a href="legal/" class="">Impressum</a><a href="pro/" class="nav-cta">49 EUR Kit</a></nav>
+    </div>
+  </header>
+  
+  <section class="hero"><div class="container"><h1>Gewerbeversicherungs-Policenprüfung &amp; Deckungsabgleich (100 % lokal)</h1><p>Finden Sie gefährliche Unterversicherung, niedrige Sublimits und fehlende MFA-/Backup-Obliegenheiten vor dem Schadenfall — ideal für Makler &amp; CFOs.</p></div></section>
+  <main class="container">
+    <div class="card">
+      <div class="btn-row" style="margin-top:0;margin-bottom:14px;">
+        <button type="button" class="btn" id="sample1Btn">Demo: IT-Mittelstand (Cyber MFA-Falle &amp; Unterversicherung)</button>
+        <button type="button" class="btn" id="sample2Btn">Demo: Optimal versichert</button>
+        <button type="button" class="btn" id="sample3Btn">Demo: Produktionsbetrieb Inhaltsdeckung</button>
+      </div>
+      <div class="form-grid">
+        <div><label for="profileInput">Versicherungsnehmer / Risiko-Objekt</label><input type="text" id="profileInput" /></div>
+        <div><label for="modeSelect">Sparte</label><select id="modeSelect"><option value="cyber_bhv">Cyber + Betriebshaftpflicht</option><option value="sach">Inhalts- &amp; Ertragsausfall (§ 75 VVG)</option><option value="schaden">Schaden-Erst-Triage</option></select></div>
+        <div><label for="toneSelect">Berichtston</label><select id="toneSelect"><option value="executive">CFO / Risikobericht</option><option value="streng">Sofortiger Deckungserweiterungs-Antrag</option></select></div>
+      </div>
+      <div class="btn-row"><button type="button" class="btn btn-primary" id="runCheckBtn">Policen-Deckung prüfen</button></div>
+    </div>
+
+    <div id="resultCard" class="card hidden">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;">
+        <h2 id="resultHeadline" style="margin:0;">Ergebnis</h2>
+        <div class="btn-row" style="margin:0;">
+          <button type="button" class="btn btn-primary" id="copyActionBtn">Maßnahmentext kopieren</button>
+          <button type="button" class="btn" id="dlCsvBtn">CSV Export (.csv)</button>
+          <button type="button" class="btn" id="dlJsonBtn">JSON Audit (.json)</button>
+        </div>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi-box"><div class="kpi-label">Deckungs-Score</div><div class="kpi-val" id="kpi1Val">-</div></div>
+        <div class="kpi-box"><div class="kpi-label">Kritische Lücken</div><div class="kpi-val" id="kpi2Val">-</div></div>
+        <div class="kpi-box"><div class="kpi-label">Offenes Schaden-Exposure</div><div class="kpi-val" id="kpi3Val">-</div></div>
+        <div class="kpi-box"><div class="kpi-label">Abgesicherte Reserve</div><div class="kpi-val" id="kpi4Val">-</div></div>
+      </div>
+      <div class="table-wrap"><table><thead><tr><th>ID</th><th>Position &amp; Kategorie</th><th>Kennzahl</th><th>Effekt</th><th>Status</th><th>Prüfhinweis</th></tr></thead><tbody id="entriesBody"></tbody></table></div>
+      <h3>Deckungslücken-Protokoll &amp; Makler-Brief</h3>
+      <textarea id="actionBox" readonly aria-label="Maßnahmentext"></textarea>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="offer-card highlight"><div><span class="badge badge-pass">CDC-POL-01 · 49 EUR</span><h3>CheDataCheck Gewerbepolicen &amp; Deckungscheck Kit</h3><div class="offer-price">49 EUR</div><p class="muted">4-Tab Makler- &amp; CFO-Deckungsmatrix (BHV, Cyber, Sach, Obliegenheiten), Guide PDF &amp; Offline CLI.</p></div><div class="btn-row"><a href="https://payhip.com/b/uVaxJ" class="btn btn-primary">49 EUR Kit bestellen</a><a href="pro/" class="btn">Details</a></div></div>
+      <div class="offer-card"><div><span class="badge badge-warn">CDC-POL-ROLLOUT · 2900 EUR</span><h3>CheDataCheck Makler &amp; KMU Policen-Audit Rollout</h3><div class="offer-price">2900 EUR</div><p class="muted">Strukturierte Übernahme &amp; Deckungsabgleich von bis zu 20 Firmen-Policen inklusive Nachtragsanträgen.</p></div><div class="btn-row"><a href="https://buy.stripe.com/4gMeV67kl8s6bXOezD2400c" class="btn btn-dark">2900 EUR Rollout buchen</a><a href="pro/" class="btn">Umfang</a></div></div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <p><strong>CheDataCheck Policy</strong> — Prüft Cyber-, Betriebs- &amp; Inhalts-Policen auf Unterversicherung (§ 75 VVG), Sublimits &amp; Obliegenheitsfallen lokal im Browser.</p>
+      <p>Che Goncalves Menendez · CheDataCheck · by VeriTakt Collective (Gewerbe: ImportKlar) · Liegnitzstr. 53A, 28237 Bremen, Deutschland · Umsatzsteuerbefreit gemäß § 19 UStG (Kleinunternehmerregelung)</p>
+      <p><a href="legal/">Impressum &amp; DSGVO</a> · <a href="pro/">49 EUR Kit &amp; 2900 EUR Rollout</a> · <a href="https://cheresonanz-design.github.io/opskanon-directory/" target="_blank" rel="noopener">Gelistet auf OpsKanon</a></p>
+    </div>
+  </footer>
+  <script src="assets/policy_audit_engine.js"></script><script src="assets/app.js"></script>
+</body>
+</html>

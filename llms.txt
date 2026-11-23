@@ -1,0 +1,6 @@
+# CheDataCheck Policy (by VeriTakt Collective)
+> Prüft Cyber-, Betriebs- & Inhalts-Policen auf Unterversicherung (§ 75 VVG), Sublimits & Obliegenheitsfallen lokal im Browser.
+
+- App: https://cheresonanz-design.github.io/chedatacheck-policy-audit/
+- Offers: https://cheresonanz-design.github.io/chedatacheck-policy-audit/pro/
+- Legal: https://cheresonanz-design.github.io/chedatacheck-policy-audit/legal/
