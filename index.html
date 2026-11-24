@@ -12,17 +12,17 @@
 <body>
   <header class="topbar">
     <div class="container topbar-inner">
-      <a class="brand-mark" href="index.html"><span>CheDataCheck Policy</span><span class="brand-badge">VVG · CYBER · BHV-AUDIT</span></a>
+      <a class="brand-mark" href="index.html"><span>CheDataCheck Policy</span><span class="brand-badge">PRAXIS-PROTOTYP · 0 EUR</span></a>
       <nav class="nav-links" aria-label="Hauptnavigation"><a href="index.html" class="active">Policen-Auditor</a>
 <a href="deckungs-gap-check/" class="">Deckungs-Gaps</a>
 <a href="unterversicherung-check/" class="">§ 75 VVG Check</a>
 <a href="schaden-triage/" class="">Schaden-Triage</a>
-<a href="pro/" class="">Kit &amp; Rollout</a>
-<a href="legal/" class="">Impressum</a><a href="pro/" class="nav-cta">49 EUR Kit</a></nav>
+<a href="pro/" class="">Prototyp &amp; Pilot</a>
+<a href="legal/" class="">Impressum</a><a href="pro/" class="nav-cta">Pilot-Anfrage</a></nav>
     </div>
   </header>
   
-  <section class="hero"><div class="container"><h1>Gewerbeversicherungs-Policenprüfung &amp; Deckungsabgleich (100 % lokal)</h1><p>Finden Sie gefährliche Unterversicherung, niedrige Sublimits und fehlende MFA-/Backup-Obliegenheiten vor dem Schadenfall — ideal für Makler &amp; CFOs.</p></div></section>
+  <section class="hero"><div class="container"><span class="brand-badge" style="margin-bottom:8px;display:inline-block;">PRAXIS-PROTOTYP · 0 EUR · KEIN PAYHIP-PRODUKT</span><h1>Gewerbeversicherungs-Policenprüfung &amp; Deckungsabgleich (100 % lokal)</h1><p>Finden Sie gefährliche Unterversicherung, niedrige Sublimits und fehlende MFA-/Backup-Obliegenheiten vor dem Schadenfall — ideal für Makler &amp; CFOs.</p></div></section>
   <main class="container">
     <div class="card">
       <div class="btn-row" style="margin-top:0;margin-bottom:14px;">
@@ -35,29 +35,7 @@
         <div><label for="modeSelect">Sparte</label><select id="modeSelect"><option value="cyber_bhv">Cyber + Betriebshaftpflicht</option><option value="sach">Inhalts- &amp; Ertragsausfall (§ 75 VVG)</option><option value="schaden">Schaden-Erst-Triage</option></select></div>
         <div><label for="toneSelect">Berichtston</label><select id="toneSelect"><option value="executive">CFO / Risikobericht</option><option value="streng">Sofortiger Deckungserweiterungs-Antrag</option></select></div>
       </div>
-      <div class="divider-top">
-        <div style="font-size:0.86rem;font-weight:700;margin-bottom:8px;">Eigene Position hinzufügen (100 % lokal im Browser)</div>
-        <div class="inline-grid">
-          <div><label for="posIdInput">Pos-ID</label><input type="text" id="posIdInput" placeholder="z. B. POS-04" /></div>
-          <div><label for="posLabelInput">Bezeichnung / Position</label><input type="text" id="posLabelInput" placeholder="Eigene Position eingeben..." /></div>
-          <div><label for="posCategoryInput">Kategorie</label><input type="text" id="posCategoryInput" placeholder="z. B. Prüfung / Risiko" /></div>
-          <div><label for="posMetricInput">Kennzahl</label><input type="number" id="posMetricInput" step="0.01" value="80" /></div>
-          <div><label for="posImpactInput">Effekt (EUR)</label><input type="number" id="posImpactInput" step="0.01" value="0" /></div>
-          <div><label for="posStatusSelect">Status</label><select id="posStatusSelect"><option value="AUTO">Automatik</option><option value="PASS">PASS</option><option value="WARN">WARN</option><option value="FAIL">FAIL</option></select></div>
-          <div><label for="posNoteInput">Prüfhinweis</label><input type="text" id="posNoteInput" placeholder="Kurzer Hinweis oder Maßnahme" /></div>
-        </div>
-        <div class="btn-row">
-          <button type="button" class="btn btn-primary" id="runCheckBtn">Policen-Deckung prüfen</button>
-          <button type="button" class="btn" id="addItemBtn">+ Position hinzufügen</button>
-          <button type="button" class="btn" id="clearItemsBtn">Positionen leeren</button>
-        </div>
-        <details style="margin-top:12px;">
-          <summary style="cursor:pointer;font-size:0.86rem;font-weight:700;color:var(--slate-500);">CSV / Semikolon-Stapelimport &amp; Direktbearbeitung</summary>
-          <p class="muted" style="margin:6px 0 8px;">Format: <code>ID;Kategorie;Position;Kennzahl;Effekt_EUR;Status;Hinweis</code> (Semikolon oder Komma, lokal im Browser verarbeitet).</p>
-          <textarea id="batchCsvInput" aria-label="CSV Stapelimport"></textarea>
-          <div class="btn-row"><button type="button" class="btn" id="applyCsvBtn">CSV übernehmen &amp; prüfen</button></div>
-        </details>
-      </div>
+      <div class="btn-row"><button type="button" class="btn btn-primary" id="runCheckBtn">Policen-Deckung prüfen</button></div>
     </div>
 
     <div id="resultCard" class="card hidden">
@@ -75,22 +53,21 @@
         <div class="kpi-box"><div class="kpi-label">Offenes Schaden-Exposure</div><div class="kpi-val" id="kpi3Val">-</div></div>
         <div class="kpi-box"><div class="kpi-label">Abgesicherte Reserve</div><div class="kpi-val" id="kpi4Val">-</div></div>
       </div>
-      <div class="table-wrap"><table><thead><tr><th>ID</th><th>Position &amp; Kategorie</th><th>Kennzahl</th><th>Effekt</th><th>Status</th><th>Prüfhinweis</th><th>Aktion</th></tr></thead><tbody id="entriesBody"></tbody></table></div>
+      <div class="table-wrap"><table><thead><tr><th>ID</th><th>Position &amp; Kategorie</th><th>Kennzahl</th><th>Effekt</th><th>Status</th><th>Prüfhinweis</th></tr></thead><tbody id="entriesBody"></tbody></table></div>
       <h3>Deckungslücken-Protokoll &amp; Makler-Brief</h3>
       <textarea id="actionBox" readonly aria-label="Maßnahmentext"></textarea>
     </div>
 
     <div class="pricing-grid">
-      <div class="offer-card highlight"><div><span class="badge badge-pass">CDC-POL-01 · 49 EUR</span><h3>CheDataCheck Gewerbepolicen &amp; Deckungscheck Kit</h3><div class="offer-price">49 EUR</div><p class="muted">4-Tab Makler- &amp; CFO-Deckungsmatrix (BHV, Cyber, Sach, Obliegenheiten), Guide PDF &amp; Offline CLI.</p></div><div class="btn-row"><a href="mailto:che.resonanz@gmail.com?subject=Bestellung%20CheDataCheck%20Gewerbepolicen%20%26%20Deckungscheck%20Kit%20%2849%20EUR%29" class="btn btn-primary">49 EUR Kit bestellen</a><a href="pro/" class="btn">Details</a></div></div>
-      <div class="offer-card"><div><span class="badge badge-warn">CDC-POL-ROLLOUT · 2900 EUR</span><h3>CheDataCheck Makler &amp; KMU Policen-Audit Rollout</h3><div class="offer-price">2900 EUR</div><p class="muted">Strukturierte Übernahme &amp; Deckungsabgleich von bis zu 20 Firmen-Policen inklusive Nachtragsanträgen.</p></div><div class="btn-row"><a href="mailto:che.resonanz@gmail.com?subject=Anfrage%20CheDataCheck%20Makler%20%26%20KMU%20Policen-Audit%20Rollout%20%282900%20EUR%29" class="btn btn-dark">2900 EUR Rollout buchen</a><a href="pro/" class="btn">Umfang</a></div></div>
+      <div class="offer-card highlight"><div><span class="badge badge-pass">0 EUR PROTOTYP · LOKAL</span><h3>Kostenloser Browser-Prototyp</h3><div class="offer-price">0 EUR</div><p class="muted">Demo-Szenarien lokal testen, kein Payhip-Produkt, kein Cloud-Upload und keine automatische Bezahlfunktion.</p></div><div class="btn-row"><a href="#top" class="btn btn-primary">Jetzt im Browser testen</a><a href="pro/" class="btn">Status &amp; Hinweise</a></div></div>
+      <div class="offer-card"><div><span class="badge badge-warn">INDIVIDUELLE ANFRAGE · B2B</span><h3>Individuelles B2B-Pilotprojekt auf Anfrage</h3><div class="offer-price">Auf Anfrage</div><p class="muted">Unverbindliche Vorabanfrage per E-Mail an che.resonanz@gmail.com zur Anpassung an Ihren Anwendungsfall (§ 19 UStG).</p></div><div class="btn-row"><a href="mailto:che.resonanz@gmail.com?subject=Unverbindliche%20B2B-Pilotanfrage%3A%20CheDataCheck%20Policy" class="btn btn-dark">Pilot-Anfrage per E-Mail</a><a href="pro/" class="btn">Details</a></div></div>
     </div>
   </main>
   <footer class="footer">
     <div class="container">
-      <p><strong>CheDataCheck Policy</strong> — Prüft Cyber-, Betriebs- &amp; Inhalts-Policen auf Unterversicherung (§ 75 VVG), Sublimits &amp; Obliegenheitsfallen lokal im Browser.</p>
+      <p><strong>CheDataCheck Policy (Interaktiver Praxis-Prototyp · 0 EUR)</strong> — Prüft Cyber-, Betriebs- &amp; Inhalts-Policen auf Unterversicherung (§ 75 VVG), Sublimits &amp; Obliegenheitsfallen lokal im Browser.</p>
       <p>Che Goncalves Menendez · CheDataCheck · by VeriTakt Collective (Gewerbe: ImportKlar) · Liegnitzstr. 53A, 28237 Bremen, Deutschland · Umsatzsteuerbefreit gemäß § 19 UStG (Kleinunternehmerregelung)</p>
-      <p>Hinweis: Orientierungshilfe mit Beispieldaten, keine Rechts-, Steuer-, Medizin- oder Versicherungsberatung und keine Garantie auf Richtigkeit. Bestellungen und Anfragen bearbeite ich persönlich per E-Mail.</p>
-      <p><a href="legal/">Impressum &amp; DSGVO</a> · <a href="pro/">49 EUR Kit &amp; 2900 EUR Rollout</a> · <a href="https://cheresonanz-design.github.io/opskanon-directory/" target="_blank" rel="noopener">Gelistet auf OpsKanon</a></p>
+      <p><a href="legal/">Impressum &amp; DSGVO</a> · <a href="pro/">Pilot-Anfrage (E-Mail)</a> · <a href="https://cheresonanz-design.github.io/opskanon-directory/" target="_blank" rel="noopener">Gelistet auf OpsKanon</a></p>
     </div>
   </footer>
   <script src="assets/policy_audit_engine.js"></script><script src="assets/app.js"></script>
